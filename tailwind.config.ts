@@ -29,7 +29,8 @@ module.exports = {
           50: '#FEC601',
         },
         rich: {
-          50: '#EE99FF',
+          50: '#EEA7FC',
+          70: '#F4CAFC',
         },
       },
       backgroundImage: {
