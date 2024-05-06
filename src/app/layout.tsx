@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,12 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main>
-          <nav className="bg-green-300 p-4 flex justify-center">
-            <div className="container mx-auto flex justify-between items-center w-full max-w-screen-lg">
-              <Link href="/">Home</Link>
-              <Link href="/dance">Dance</Link>
-            </div>
-          </nav>
+          <Navbar />
           {children}
         </main>
       </body>
