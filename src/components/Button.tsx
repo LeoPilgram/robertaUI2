@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+// Source: https://github.com/adrianhajdin/travel_ui_ux/blob/main/components/Navbar.tsx
 type ButtonProps = {
   type: 'button' | 'submit';
   title: string;
