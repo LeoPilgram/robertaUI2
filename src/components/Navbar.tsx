@@ -12,7 +12,7 @@ const Navbar = () => {
   const pathname = usePathname();
   return (
     <nav className="bg-rich-50 mx-auto flex justify-around items-center">
-      <div className=" p-4">
+      <div className=" p-3">
         <Image
           src="/robertaLogo.png"
           width={50}
@@ -29,7 +29,7 @@ const Navbar = () => {
               className={clsx(
                 'rounded-md bg-rich-70 p-3 text-sm font-medium hover:bg-blue-100 hover:text-blue-600 md:flex-none',
                 {
-                  'bg-blue-100 text-blue-600': pathname === link.href,
+                  'text-blue-600': pathname === link.href,
                 }
               )}
             >
@@ -38,7 +38,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-      <div className=" p-4">
+      <div className=" p-3">
         <Image
           src="/robertaLogo.png"
           width={50}
