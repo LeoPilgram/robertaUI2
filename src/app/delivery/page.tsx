@@ -1,7 +1,9 @@
+import Header from '@/components/Header';
+
 export default function DeliveryPage() {
   return (
     <div>
-      <h1 className="text-left text-xl p-4">Delivery</h1>
+      <Header header="Delivery" />
       <p className="p-4">Lorem ipsum</p>
     </div>
   );

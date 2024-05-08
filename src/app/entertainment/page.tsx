@@ -1,10 +1,11 @@
 import BasicSelect from '@/components/Dropdown';
+import Header from '@/components/Header';
 
 export default function EntertainmentPage() {
   return (
     <div>
+      <Header header="Entertainment" />
       <div>
-        <h1 className="text-left text-xl p-4">Entertainment</h1>
         <p className="p-4">Lorem ipsum</p>
       </div>
 
