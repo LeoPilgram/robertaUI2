@@ -32,6 +32,9 @@ module.exports = {
           50: '#EEA7FC',
           70: '#F4CAFC',
         },
+        pgreen: {
+          50: '#d9ffcc'
+        }
       },
       backgroundImage: {
         'bg-img-1': "url('/img-1.png')",
