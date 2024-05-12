@@ -20,7 +20,18 @@ const Footer = () => {
         />
       </div>
       <div className="p-4 flex">
-        // Hier kommen Links zu Github, Confluence und Jira
+        <a
+          target="_blank"
+          href="https://github.com/LeoPilgram/robertaUI2"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/github-mark.svg"
+            width={50}
+            height={50}
+            alt="Picture of the author"
+          />
+        </a>
       </div>
       <div className=" p-3">
         <Image
