@@ -1,11 +1,12 @@
-import Image from 'next/image';
-
 // Source: https://github.com/adrianhajdin/travel_ui_ux/blob/main/components/Navbar.tsx
+import Image from 'next/image';
+import React from 'react';
+
 type ButtonProps = {
   type: 'button' | 'submit';
   title: string;
   icon?: string;
-  variant: string;
+  className?: string; // Add className prop
   full?: boolean;
 };
 
@@ -13,12 +14,12 @@ const Button = ({
   type,
   title,
   icon,
-  variant,
+  className, // Include className in props
   full,
 }: ButtonProps) => {
   return (
     <button
-      className={`flexCenter gap-3 rounded-full border ${variant} ${
+      className={`flexCenter gap-3 rounded-full border ${className} ${
         full && 'w-full'
       }`}
       type={type}

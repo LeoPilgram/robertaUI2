@@ -1,7 +1,9 @@
 import Header from '@/components/Header';
 import Paragraph from '@/components/Paragraph';
 
+import Button from '@/components/Button';
 import DropdownMenu from '@/components/Dropdown';
+import Link from 'next/link';
 import React from 'react';
 
 const EntertainmentPage = () => {
@@ -33,6 +35,15 @@ const EntertainmentPage = () => {
         {' '}
         {/* Adjust margin and add top margin */}
         <DropdownMenu buttonText="Tanz" menuItems={menuItemsTanz} />
+      </div>
+      <div>
+        <Link href="/process">
+          <Button
+            className="bg-pgreen-50 text-left ml-5 mt-4"
+            type="button"
+            title="Bestätigen"
+          />
+        </Link>
       </div>
     </div>
   );
