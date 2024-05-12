@@ -20,7 +20,7 @@ const Navbar = () => {
           alt="Picture of the author"
         />
       </div>
-      <div className="bg-rich-50 p-4 flex">
+      <div className="p-4 flex">
         <div className=" w-3/4 space-x-20">
           {NAV_LINKS.map((link) => (
             <Link
