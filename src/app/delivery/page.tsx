@@ -1,8 +1,15 @@
+import Header from '@/components/Header';
+import Paragraph from '@/components/Paragraph';
+
 export default function DeliveryPage() {
   return (
     <div>
-      <h1 className="text-center text-xl p-4">Delivery</h1>
-      <p className="p-4">Lorem ipsum</p>
+      <Header header="Delivery" />
+      <div>
+        <div>
+          <Paragraph paragraph="Hier kannst Du Delivery-Optionen auswählen." />
+        </div>
+      </div>
     </div>
     
   );
