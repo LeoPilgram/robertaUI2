@@ -1,10 +1,10 @@
-import Header from '@/components/Header';
-
 export default function Process() {
   return (
+  <article className="prose text-left ml-5">
     <div>
-      <Header header="Process" />
-      <p className="p-4">Lorem ipsum</p>
+      <h2>Process</h2>
+      <p>Lorem ipsum</p>
     </div>
+  </article>
   );
 }

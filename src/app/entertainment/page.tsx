@@ -1,5 +1,3 @@
-import Header from '@/components/Header';
-import Paragraph from '@/components/Paragraph';
 import DropdownMenu from '@/components/Dropdown';
 import Link from 'next/link';
 import React from 'react';
@@ -17,11 +15,12 @@ const EntertainmentPage = () => {
   ];
 
   return (
-    <div>
-      <Header header="Entertainment" />
+  <article className="prose text-left ml-5">
+      <div>
+      <h2>Entertainment</h2>
       <div>
         <div>
-          <Paragraph paragraph="Hier kannst Du Entertainment-Optionen auswählen." />
+          <p>Hier kannst Du Entertainment-Optionen auswählen.</p>
         </div>
       </div>
       <div className="text-left ml-5">
@@ -40,6 +39,8 @@ const EntertainmentPage = () => {
         </Link>
       </div>
     </div>
+    </article>
+
   );
 };
 
