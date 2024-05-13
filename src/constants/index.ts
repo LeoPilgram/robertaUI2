@@ -9,3 +9,13 @@ export const NAV_LINKS = [
   },
   { href: '/delivery', key: 'delivery', label: 'Delivery' },
 ];
+export const DANCES = [
+  { id: 0, name: 'Dance 1' },
+  { id: 1, name: 'Dance 2' },
+  { id: 2, name: 'Dance 3' },
+];
+export const TRACKS = [
+  { id: 0, name: 'Track 1' },
+  { id: 1, name: 'Track 2' },
+  { id: 2, name: 'Track 3' },
+];
