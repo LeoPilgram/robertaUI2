@@ -3,19 +3,9 @@ import Paragraph from '@/components/Paragraph';
 import DropdownMenu from '@/components/Dropdown';
 import Link from 'next/link';
 import React from 'react';
+import { DANCES, SONGS } from '@/constants';
 
 const EntertainmentPage = () => {
-  const menuItemsMusik = [
-    { text: 'Song 1' },
-    { text: 'Song 2' },
-    { text: 'Song 3' },
-  ];
-  const menuItemsTanz = [
-    { text: 'Tanz 1' },
-    { text: 'Tanz 2' },
-    { text: 'Tanz 3' },
-  ];
-
   return (
     <div>
       <Header header="Entertainment" />
@@ -27,12 +17,12 @@ const EntertainmentPage = () => {
       <div className="text-left ml-5">
         {' '}
         {/* Adjust margin here */}
-        <DropdownMenu buttonText="Musik" menuItems={menuItemsMusik} />
+        <DropdownMenu items={DANCES} type="Dancemoves" />
       </div>
       <div className="text-left ml-5 mt-4">
         {' '}
         {/* Adjust margin and add top margin */}
-        <DropdownMenu buttonText="Tanz" menuItems={menuItemsTanz} />
+        <DropdownMenu items={SONGS} type="Songs" />
       </div>
       <div>
         <Link href="/process">
