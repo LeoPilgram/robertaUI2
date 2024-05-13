@@ -14,7 +14,7 @@ export const DANCES = [
   { id: 1, name: 'Dance 2' },
   { id: 2, name: 'Dance 3' },
 ];
-export const TRACKS = [
+export const SONGS = [
   { id: 0, name: 'Track 1' },
   { id: 1, name: 'Track 2' },
   { id: 2, name: 'Track 3' },

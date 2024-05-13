@@ -1,16 +1,19 @@
-function DropdownMenu() {
+interface DropdownProps {
+  items: { id: number; name: string }[];
+  type: string;
+}
+
+const DropdownMenu: React.FC<DropdownProps> = ({ items, type }) => {
   return (
     <select className="select w-full max-w-xs">
       <option disabled selected>
-        Pick your favorite Simpson
+        {type}
       </option>
-      <option>Homer</option>
-      <option>Marge</option>
-      <option>Bart</option>
-      <option>Lisa</option>
-      <option>Maggie</option>
+      {items.map((name) => (
+        <option>{name.name}</option>
+      ))}
     </select>
   );
-}
+};
 
 export default DropdownMenu;
