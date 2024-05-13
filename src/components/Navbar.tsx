@@ -11,8 +11,8 @@ import clsx from 'clsx';
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <nav className="bg-rich-50 mx-auto flex justify-around items-center">
-      <div className=" p-3">
+    <nav className="bg-rich-50 flex flex-row justify-between items-center">
+      <div className="p-3">
         <Image
           src="/robertaLogo.png"
           width={50}
@@ -20,7 +20,7 @@ const Navbar = () => {
           alt="Picture of the author"
         />
       </div>
-      <div className="bg-rich-50 p-4 flex">
+      <div className="p-4 flex">
         <div className=" w-3/4 space-x-20">
           {NAV_LINKS.map((link) => (
             <Link
