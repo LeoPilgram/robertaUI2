@@ -5,7 +5,7 @@ interface DropdownProps {
 
 const DropdownMenu: React.FC<DropdownProps> = ({ items, type }) => {
   return (
-    <select className="select w-full max-w-xs">
+    <select className="select w-full max-w-xs bg-accent">
       <option disabled selected>
         {type}
       </option>
