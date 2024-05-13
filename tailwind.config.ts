@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+import daisyui from 'daisyui';
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -33,8 +35,8 @@ module.exports = {
           70: '#F4CAFC',
         },
         pgreen: {
-          50: '#d9ffcc'
-        }
+          50: '#d9ffcc',
+        },
       },
       backgroundImage: {
         'bg-img-1': "url('/img-1.png')",
@@ -56,5 +58,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
 };

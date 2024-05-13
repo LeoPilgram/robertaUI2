@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,8 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main>
-          <Navbar />
-          {children}
+          <div className="flex flex-col h-screen justify-between">
+            <Navbar />
+            <div className="mb-auto">{children}</div>
+            <Footer />
+          </div>
         </main>
       </body>
     </html>
