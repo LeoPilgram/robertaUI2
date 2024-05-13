@@ -58,5 +58,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require('@tailwindcss/typography'), daisyui],
+  daisyui: {
+    themes: ['corporate'],
+    styled: true,
+    base: true,
+  },
 };
