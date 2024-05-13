@@ -3,7 +3,6 @@
 import { NAV_LINKS } from '@/constants';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from './Button';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 

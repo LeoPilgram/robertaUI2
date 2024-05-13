@@ -1,7 +1,5 @@
 import Header from '@/components/Header';
 import Paragraph from '@/components/Paragraph';
-
-import Button from '@/components/Button';
 import DropdownMenu from '@/components/Dropdown';
 import Link from 'next/link';
 import React from 'react';
@@ -38,11 +36,7 @@ const EntertainmentPage = () => {
       </div>
       <div>
         <Link href="/process">
-          <Button
-            className="bg-pgreen-50 text-left ml-5 mt-4"
-            type="button"
-            title="Bestätigen"
-          />
+          <button className="btn bg-pgreen-50 text-left ml-5 mt-4">Bestätigen</button>
         </Link>
       </div>
     </div>
