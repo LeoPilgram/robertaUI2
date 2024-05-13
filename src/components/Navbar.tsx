@@ -48,7 +48,7 @@ const Navbar = () => {
             <img
               src="/robertaLogo.png"
               alt="Roberta Logo"
-              className="h-6 w-6"
+              className="h-10 w-10"
             />
           </button>
         </a>
