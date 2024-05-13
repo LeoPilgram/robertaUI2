@@ -1,16 +1,14 @@
-import Header from '@/components/Header';
-import Paragraph from '@/components/Paragraph';
-import Image from 'next/image';
-
 export default function Home() {
   return (
-    <div>
+    <article className="prose text-left ml-5">
       <div>
-        <Header header="Roberta UI" />
+        <div>
+          <h2>RobertaUI</h2>
+        </div>
+        <div>
+          <p>Willkommen</p>
+        </div>
       </div>
-      <div>
-        <Paragraph paragraph="Willkommen!" />
-      </div>
-    </div>
+    </article>
   );
 }
