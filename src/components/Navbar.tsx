@@ -40,7 +40,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">Roberta UI</a>
+        <a href="/" className="btn btn-ghost text-xl">
+          Roberta UI
+        </a>
       </div>
       <div className="navbar-end">
         <a href="/">
