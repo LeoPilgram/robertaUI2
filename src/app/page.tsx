@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -12,7 +14,9 @@ export default function Home() {
             Mit dieser App lässt sich Roberta steuern. Roberta kann
             Dinge transportieren, Musik abspielen und tanzen!
           </p>
-          <button className="btn btn-primary">Los geht's!</button>
+          <Link href="/entertainment">
+            <button className="btn btn-primary">Los geht's!</button>
+          </Link>
         </div>
       </div>
     </div>
