@@ -25,7 +25,7 @@ const EntertainmentPage = () => {
         </div>
         <div>
           <Link href="/process">
-            <button className="btn text-left ml-5 mt-4 bg-secondary">
+            <button className="btn text-left ml-5 mt-4 btn-primary">
               Bestätigen
             </button>
           </Link>
