@@ -10,7 +10,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({ items, type }) => {
         {type}
       </option>
       {items.map((name) => (
-        <option>{name.name}</option>
+        <option key={name.id}>{name.name}</option>
       ))}
     </select>
   );
