@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="robertaLogo.png" />
+      </head>
       <body className={inter.className}>
         <main>
           <div className="flex flex-col h-screen justify-between">
