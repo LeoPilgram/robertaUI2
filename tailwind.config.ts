@@ -60,7 +60,7 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/typography'), daisyui],
   daisyui: {
-    themes: ['corporate'],
+    themes: ['pastel'],
     styled: true,
     base: true,
   },
