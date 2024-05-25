@@ -3,7 +3,10 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div
+      className="hero bg-base-200"
+      style={{ minHeight: 'calc(100vh - 140px)' }}
+    >
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
           src="/turtlebot.jpg"
