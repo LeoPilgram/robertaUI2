@@ -14,7 +14,7 @@ export default function Home() {
             Mit dieser App lässt sich Roberta steuern. Roberta kann
             Dinge transportieren, Musik abspielen und tanzen!
           </p>
-          <Link href="/entertainment">
+          <Link href="/delivery">
             <button className="btn btn-primary">Los geht's!</button>
           </Link>
         </div>
