@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+// Fonts
 const inter = Inter({ subsets: ['latin'] });
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400'],
+});
 
 export const metadata: Metadata = {
   title: 'Roberta UI',
@@ -22,7 +29,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="robertaLogo.png" />
       </head>
-      <body className={inter.className}>
+      <body className={manrope.className}>
         <main>
           <div className="flex flex-col h-screen justify-between">
             <Navbar />
