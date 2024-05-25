@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const Navbar = () => {
   return (
     <div className="navbar bg-base-300">
@@ -47,10 +48,11 @@ const Navbar = () => {
       <div className="navbar-end">
         <a href="/">
           <button className="btn btn-ghost btn-circle">
-            <img
+            <Image
               src="/robertaLogo.png"
               alt="Roberta Logo"
-              className="h-10 w-10"
+              width={100}
+              height={100}
             />
           </button>
         </a>
