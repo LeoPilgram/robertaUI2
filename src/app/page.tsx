@@ -1,12 +1,16 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <img
-          src="turtlebot.jpg"
+        <Image
+          src="/turtlebot.jpg"
           className="max-w-sm rounded-lg shadow-2xl"
+          alt="Turtlebot Bild"
+          width={1000}
+          height={1000}
         />
         <div>
           <h1 className="text-5xl font-bold">RobertaUI</h1>
@@ -15,7 +19,7 @@ export default function Home() {
             Dinge transportieren, Musik abspielen und tanzen!
           </p>
           <Link href="/entertainment">
-            <button className="btn btn-primary">Los geht's!</button>
+            <button className="btn btn-primary">Los Roberta!</button>
           </Link>
         </div>
       </div>
