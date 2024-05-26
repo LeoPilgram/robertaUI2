@@ -53,17 +53,20 @@ export default function DeliveryPage() {
                   {/* Adjust margin here */}
                   <DropdownMenu items={DANCES} type="Dancemoves" />
                 </div>
+                <div>
+                  <button className="btn text-left ml-1 mt-4 btn-primary">
+                    Dance
+                  </button>
+                </div>
                 <div className="text-left ml-1 mt-4">
                   {' '}
                   {/* Adjust margin and add top margin */}
                   <DropdownMenu items={SONGS} type="Songs" />
                 </div>
                 <div>
-                  <Link href="/delivery">
-                    <button className="btn text-left ml-1 mt-4 btn-primary">
-                      Bestätigen
-                    </button>
-                  </Link>
+                  <button className="btn text-left ml-1 mt-4 btn-primary">
+                    Play Song
+                  </button>
                 </div>
               </div>
             </article>
