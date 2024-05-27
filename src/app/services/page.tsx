@@ -1,5 +1,5 @@
 import DropdownMenu from '@/components/Dropdown';
-import { DANCES, SONGS } from '@/constants';
+import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
 
 export default function ServicesPage() {
   return (
@@ -97,13 +97,33 @@ export default function ServicesPage() {
             className="drawer-overlay"
           ></label>
           <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-            {/* Sidebar content here */}
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>
+            {
+              <article className="prose text-left ml-5">
+                <div>
+                  <h2>Delivery</h2>
+                  <div>
+                    <div>
+                      <p>
+                        Hier kannst Du Delivery-Optionen auswählen.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-left ml-1">
+                    {' '}
+                    {/* Adjust margin here */}
+                    <DropdownMenu
+                      items={CHECKPOINTS}
+                      type="Checkpoints"
+                    />
+                  </div>
+                  <div>
+                    <button className="btn text-left ml-1 mt-4 btn-primary">
+                      Go, Roberta!
+                    </button>
+                  </div>
+                </div>
+              </article>
+            }
           </ul>
         </div>
       </div>
