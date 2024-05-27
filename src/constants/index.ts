@@ -7,7 +7,7 @@ export const NAV_LINKS = [
     key: 'entertainment',
     label: 'Entertainment',
   },
-  { href: '/delivery', key: 'delivery', label: 'Delivery' },
+  { href: '/services', key: 'services', label: 'Services' },
 ];
 export const DANCES = [
   { id: 0, name: 'Dance 1' },
