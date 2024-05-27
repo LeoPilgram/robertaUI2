@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 const Navbar = () => {
   return (
     <div className="navbar bg-base-300">
@@ -29,21 +30,18 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-accent rounded-box w-52"
           >
             <li>
-              <a href="/">Homepage</a>
+              <Link href="/">Homepage</Link>
             </li>
             <li>
-              <a href="/delivery">Delivery</a>
-            </li>
-            <li>
-              <a href="/entertainment">Entertainment</a>
+              <Link href="/services">Services</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center">
-        <a href="/" className="btn btn-ghost text-xl">
+        <Link href="/" className="btn btn-ghost text-xl">
           Roberta UI
-        </a>
+        </Link>
       </div>
       <div className="navbar-end">
         <a href="/">
