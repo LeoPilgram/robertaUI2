@@ -48,6 +48,20 @@ export default function ServicesPage() {
                               ausführen.
                             </p>
                           </div>
+
+                          <div>
+                            <div className="form-control">
+                              <label className="label cursor-pointer">
+                                <span className="label-text">
+                                  Services nutzen!
+                                </span>
+                                <input
+                                  type="checkbox"
+                                  className="toggle"
+                                />
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </article>
