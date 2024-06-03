@@ -26,7 +26,21 @@ export default function ServicesPage() {
                   {
                     <article className="prose text-left ml-5">
                       <div>
-                        <h2>Services</h2>
+                        <div className="flex flex-row">
+                          <h2>Services</h2>
+                        </div>
+
+                        <div className="toast toast-top toast-end ml-5 mt-20">
+                          <div className="alert alert-info bg-error">
+                            <span>
+                              Roberta ist momentan im Einsatz.
+                            </span>
+                          </div>
+                          <div className="alert alert-success">
+                            <span>Roberta ist verfügbar.</span>
+                          </div>
+                        </div>
+
                         <div>
                           <div>
                             <p>
