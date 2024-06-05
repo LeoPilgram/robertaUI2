@@ -24,7 +24,6 @@ const ServiceStatusToggle = () => {
       </div>
       <div className="toast toast-top toast-end ml-5 mt-20">
         {' '}
-        {/* Wrap both alerts in this div */}
         {isChecked ? (
           <div className="alert alert-info bg-error">
             <span>Roberta ist momentan im Einsatz.</span>
