@@ -1,5 +1,6 @@
 import DropdownMenu from '@/components/Dropdown';
 import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
+import ServiceStatusToggle from '@/components/Statusanzeige';
 
 export default function ServicesPage() {
   return (
@@ -26,13 +27,18 @@ export default function ServicesPage() {
                   {
                     <article className="prose text-left ml-5">
                       <div>
-                        <h2>Services</h2>
+                        <div className="flex flex-row">
+                          <h2>Services</h2>
+                        </div>
                         <div>
                           <div>
                             <p>
                               Hier kannst Du Services von Roberta
                               ausführen.
                             </p>
+                          </div>
+                          <div>
+                            <ServiceStatusToggle />
                           </div>
                         </div>
                       </div>
