@@ -1,7 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Home() {
+const runTest = async () => {
+  const res = await fetch('http://localhost:3000/test');
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.text();
+};
+
+export default async function Home() {
+  const data = await runTest();
   return (
     <div
       className="hero bg-base-200"
@@ -24,6 +35,9 @@ export default function Home() {
           <Link href="/services">
             <button className="btn btn-primary">Los Roberta!</button>
           </Link>
+          <button className="btn btn-primary" onClick={runTest}>
+            Run Backend Test
+          </button>
         </div>
       </div>
     </div>
