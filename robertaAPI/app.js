@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const host = '0.0.0.0'; // Ihre lokale IP-Adresse
+const host = '0.0.0.0';
 const { exec } = require('child_process');
 
 app.get('/', (req, res) => {
