@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { runTest } from './actions';
 
 export default function Home() {
   return (
@@ -24,6 +26,9 @@ export default function Home() {
           <Link href="/services">
             <button className="btn btn-primary">Los Roberta!</button>
           </Link>
+          <form action={runTest}>
+            <button className="btn btn-primary">Test</button>
+          </form>
         </div>
       </div>
     </div>
