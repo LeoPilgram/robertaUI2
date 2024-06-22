@@ -47,14 +47,14 @@ export default function ServicesPage() {
         open={dialogOpen}
         onClose={() => setDialogOpen(false)}
       >
-        <div className="modal-box">
+        <div className="modal-box bg-base-300">
           <h3 className="font-bold text-lg">Hello!</h3>
           <p className="py-4">{dialogMessage}</p>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button
-                className="btn"
+                className="btn bg-primary"
                 onClick={() => setDialogOpen(false)}
               >
                 Close
