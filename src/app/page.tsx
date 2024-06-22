@@ -26,11 +26,19 @@ export default function Home() {
           <Link href="/services">
             <button className="btn btn-primary">Los Roberta!</button>
           </Link>
-          <form action={runTest}>
+          {/* <form action={runTest}>
             <button type="submit" className="btn btn-primary">
               Test
             </button>
-          </form>
+          </form> */}
+          <button
+            className="btn btn-primary"
+            onClick={async () => {
+              runTest();
+            }}
+          >
+            Test
+          </button>
         </div>
       </div>
     </div>
