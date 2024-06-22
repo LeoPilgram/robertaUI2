@@ -27,7 +27,9 @@ export default function Home() {
             <button className="btn btn-primary">Los Roberta!</button>
           </Link>
           <form action={runTest}>
-            <button className="btn btn-primary">Test</button>
+            <button type="submit" className="btn btn-primary">
+              Test
+            </button>
           </form>
         </div>
       </div>
