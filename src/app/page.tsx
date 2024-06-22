@@ -33,7 +33,7 @@ export default function Home() {
           </form> */}
           <button
             className="btn btn-primary"
-            onClick={async () => {
+            onClick={() => {
               runTest();
             }}
           >
