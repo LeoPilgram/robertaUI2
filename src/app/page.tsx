@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { runTest } from './actions';
+import { useState } from 'react';
 
 export default function Home() {
   return (
@@ -26,19 +27,6 @@ export default function Home() {
           <Link href="/services">
             <button className="btn btn-primary">Los Roberta!</button>
           </Link>
-          {/* <form action={runTest}>
-            <button type="submit" className="btn btn-primary">
-              Test
-            </button>
-          </form> */}
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              runTest();
-            }}
-          >
-            Test
-          </button>
         </div>
       </div>
     </div>

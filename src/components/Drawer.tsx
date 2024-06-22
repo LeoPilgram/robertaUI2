@@ -2,7 +2,11 @@ import DropdownMenu from '@/components/Dropdown';
 import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
 import ServiceStatusToggle from '@/components/Statusanzeige';
 
-const Drawer = () => {
+type DrawerProps = {
+  handleTest: () => Promise<void>;
+};
+
+const Drawer: React.FC<DrawerProps> = ({ handleTest }) => {
   return (
     <div className="drawer">
       <input
@@ -35,6 +39,12 @@ const Drawer = () => {
                       <div>
                         <ServiceStatusToggle />
                       </div>
+                      <button
+                        className="btn text-left ml-1 mt-4 btn-primary"
+                        onClick={handleTest}
+                      >
+                        Test
+                      </button>
                     </div>
                   </div>
                 </article>
