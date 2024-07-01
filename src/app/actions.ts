@@ -14,3 +14,17 @@ export async function runTest(): Promise<void> {
     });
   });
 }
+
+export async function navTest(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    exec('rosrun auto_nav goal_pose.py pickup_point1', (err, stdout, stderr) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+        return;
+      }
+      console.log(stdout);
+      resolve();
+    });
+  });
+}
