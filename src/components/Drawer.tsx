@@ -3,10 +3,12 @@ import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
 import ServiceStatusToggle from '@/components/Statusanzeige';
 
 type DrawerProps = {
-  handleTest: () => Promise<void>;
+  handleAction: (actionType: String) => Promise<void>;
 };
 
-const Drawer: React.FC<DrawerProps> = ({ handleTest }) => {
+const Drawer: React.FC<DrawerProps> = ({
+  handleAction: handleTest,
+}) => {
   return (
     <div className="drawer">
       <input
@@ -41,9 +43,15 @@ const Drawer: React.FC<DrawerProps> = ({ handleTest }) => {
                       </div>
                       <button
                         className="btn text-left ml-1 mt-4 btn-primary"
-                        onClick={handleTest}
+                        onClick={(event) => handleTest('Test')}
                       >
                         Test
+                      </button>
+                      <button
+                        className="btn text-left ml-1 mt-4 btn-primary"
+                        onClick={(event) => handleTest('dance3')}
+                      >
+                        Dance!
                       </button>
                     </div>
                   </div>

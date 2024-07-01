@@ -3,15 +3,20 @@
 import Drawer from '@/components/Drawer';
 import Map from '@/components/Map';
 import { useState } from 'react';
-import { runTest } from '../actions';
+import { dance3, runTest } from '../actions';
+import { act } from 'react-dom/test-utils';
 
 export default function ServicesPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogMessage, setDialogMessage] = useState('');
 
-  const handleTest = async () => {
+  const handleAction = async (actionType: String) => {
     try {
-      await runTest();
+      if ((actionType = 'test')) {
+        await runTest();
+      } else if ((actionType = 'dance3')) {
+        await dance3();
+      }
       setDialogMessage('Test erfolgreich ausgeführt');
     } catch (err: any) {
       setDialogMessage('Fehler: ' + err.message);
@@ -23,7 +28,7 @@ export default function ServicesPage() {
       className="flex flex-col"
       style={{ minHeight: 'calc(100vh - 140px)' }}
     >
-      <Drawer handleTest={handleTest} />
+      <Drawer handleAction={handleAction} />
       <div className="flex flex-col grow">
         <Map />
         <div className="flex flex-row justify-around m-5">
