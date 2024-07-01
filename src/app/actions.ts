@@ -20,7 +20,7 @@ export async function runTest(): Promise<void> {
 export async function dance3(): Promise<void> {
   return new Promise((resolve, reject) => {
     exec(
-      'sshpass -p "turtlebot" ssh ubuntu@192.168.50.53 "bash -s" < src/app/scripts/dance3.py',
+      'sshpass -p "turtlebot" ssh ubuntu@192.168.50.53 "bash -s" < src/app/scripts/dance_3.py',
       (err, stdout, stderr) => {
         if (err) {
           console.error(err);
