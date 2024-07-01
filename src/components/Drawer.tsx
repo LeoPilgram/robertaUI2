@@ -6,9 +6,7 @@ type DrawerProps = {
   handleAction: (actionType: String) => Promise<void>;
 };
 
-const Drawer: React.FC<DrawerProps> = ({
-  handleAction: handleTest,
-}) => {
+const Drawer: React.FC<DrawerProps> = ({ handleAction }) => {
   return (
     <div className="drawer">
       <input
@@ -43,13 +41,13 @@ const Drawer: React.FC<DrawerProps> = ({
                       </div>
                       <button
                         className="btn text-left ml-1 mt-4 btn-primary"
-                        onClick={(event) => handleTest('Test')}
+                        onClick={(event) => handleAction('Test')}
                       >
                         Test
                       </button>
                       <button
                         className="btn text-left ml-1 mt-4 btn-primary"
-                        onClick={(event) => handleTest('dance3')}
+                        onClick={(event) => handleAction('dance3')}
                       >
                         Dance!
                       </button>
