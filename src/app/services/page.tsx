@@ -3,7 +3,7 @@
 import Drawer from '@/components/Drawer';
 import Map from '@/components/Map';
 import { useState } from 'react';
-import { runTest } from '../actions';
+import { navToPickupPoint, runTest } from '../actions';
 
 export default function ServicesPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function ServicesPage() {
 
   const handleTest = async () => {
     try {
-      await runTest();
+      await navToPickupPoint("pickup_point1");
       setDialogMessage('Test erfolgreich ausgeführt');
     } catch (err: any) {
       setDialogMessage('Fehler: ' + err.message);
