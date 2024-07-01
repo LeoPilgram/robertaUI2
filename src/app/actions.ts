@@ -15,9 +15,10 @@ export async function runTest(): Promise<void> {
   });
 }
 
-export async function navTest(): Promise<void> {
+//possible agruments for goal_pose.py: 'pickup_point1', 'pickup_point2', 'pickup_point3', 'pickup_point4', 'pickup_point5', 'pickup_point6'
+export async function navToPickupPoint(pickupPoint: String): Promise<void> {
   return new Promise((resolve, reject) => {
-    exec('rosrun auto_nav goal_pose.py pickup_point1', (err, stdout, stderr) => {
+    exec('rosrun auto_nav goal_pose.py ${pickupPoint}', (err, stdout, stderr) => {
       if (err) {
         console.error(err);
         reject(err);
