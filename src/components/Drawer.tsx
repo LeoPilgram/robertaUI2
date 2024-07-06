@@ -1,12 +1,10 @@
 import DropdownMenu from '@/components/Dropdown';
 import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
 import ServiceStatusToggle from '@/components/Statusanzeige';
+import { useActionHandler } from '@/app/handleAction';
 
-type DrawerProps = {
-  handleAction: (actionType: String) => Promise<void>;
-};
-
-const Drawer: React.FC<DrawerProps> = ({ handleAction }) => {
+const Drawer = () => {
+  const { handleAction } = useActionHandler();
   return (
     <div className="drawer">
       <input
@@ -41,7 +39,7 @@ const Drawer: React.FC<DrawerProps> = ({ handleAction }) => {
                       </div>
                       <button
                         className="btn text-left ml-1 mt-4 btn-primary"
-                        onClick={(event) => handleAction('Test')}
+                        onClick={(event) => handleAction('test')}
                       >
                         Test
                       </button>
