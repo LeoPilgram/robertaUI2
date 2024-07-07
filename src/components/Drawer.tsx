@@ -1,8 +1,10 @@
 import DropdownMenu from '@/components/Dropdown';
 import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
 import ServiceStatusToggle from '@/components/Statusanzeige';
+import { useActionHandler } from '@/app/handleAction';
 
 const Drawer = () => {
+  const { handleAction } = useActionHandler();
   return (
     <div className="drawer">
       <input
@@ -35,6 +37,18 @@ const Drawer = () => {
                       <div>
                         <ServiceStatusToggle />
                       </div>
+                      <button
+                        className="btn text-left ml-1 mt-4 btn-primary"
+                        onClick={(event) => handleAction('test')}
+                      >
+                        Test
+                      </button>
+                      <button
+                        className="btn text-left ml-1 mt-4 btn-primary"
+                        onClick={(event) => handleAction('dance3')}
+                      >
+                        Dance!
+                      </button>
                     </div>
                   </div>
                 </article>
