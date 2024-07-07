@@ -2,9 +2,15 @@ import DropdownMenu from '@/components/Dropdown';
 import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
 import ServiceStatusToggle from '@/components/Statusanzeige';
 import { useActionHandler } from '@/app/handleAction';
+import { useDanceHandler } from '@/app/handleDance';
+import { useSongHandler } from '@/app/handleSong';
 
 const Drawer = () => {
   const { handleAction } = useActionHandler();
+  const { selectedDance, setSelectedDance, handleDance } =
+    useDanceHandler();
+  const { selectedSong, setSelectedSong, handleSong } =
+    useSongHandler();
   return (
     <div className="drawer">
       <input
@@ -79,20 +85,31 @@ const Drawer = () => {
                         <DropdownMenu
                           items={DANCES}
                           type="Dancemoves"
+                          onSelect={setSelectedDance}
                         />
                       </div>
                       <div>
-                        <button className="btn text-left ml-1 mt-4 btn-primary">
+                        <button
+                          className="btn text-left ml-1 mt-4 btn-primary"
+                          onClick={handleDance}
+                        >
                           Dance
                         </button>
                       </div>
                       <div className="text-left ml-1 mt-4">
                         {' '}
                         {/* Adjust margin and add top margin */}
-                        <DropdownMenu items={SONGS} type="Songs" />
+                        <DropdownMenu
+                          items={SONGS}
+                          type="Songs"
+                          onSelect={setSelectedSong}
+                        />
                       </div>
                       <div>
-                        <button className="btn text-left ml-1 mt-4 btn-primary">
+                        <button
+                          className="btn text-left ml-1 mt-4 btn-primary"
+                          onClick={handleSong}
+                        >
                           Play Song
                         </button>
                       </div>
