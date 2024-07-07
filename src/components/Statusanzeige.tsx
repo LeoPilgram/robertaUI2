@@ -1,12 +1,22 @@
 'use client';
 
+import { onDoneWithRoberta, onToggleButton } from '@/app/actions';
 import React, { useState } from 'react';
 
 const ServiceStatusToggle = () => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const toggleServices = () => {
-    setIsChecked(!isChecked);
+  const toggleServices = async () => {
+    if (!isChecked) {
+      if (await onToggleButton()) {
+        setIsChecked(!isChecked);
+      } else {
+        window.alert('Roberta wird bereits verwendet!');
+      }
+    } else {
+      await onDoneWithRoberta();
+      setIsChecked(!isChecked);
+    }
   };
 
   return (
@@ -26,11 +36,11 @@ const ServiceStatusToggle = () => {
         {' '}
         {isChecked ? (
           <div className="alert alert-info bg-error">
-            <span>Roberta ist momentan im Einsatz.</span>
+            <span>Roberta kann jetzt verwendet werden.</span>
           </div>
         ) : (
           <div className="alert alert-success">
-            <span>Roberta ist verfügbar.</span>
+            <span>Services starten, um Roberta zu nutzen.</span>
           </div>
         )}
       </div>
