@@ -33,3 +33,18 @@ export async function dance3(): Promise<void> {
     );
   });
 }
+
+let isInUse: boolean = false;
+
+export async function onToggleButton(): Promise<boolean> {
+  if (!isInUse) {
+    isInUse = true;
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export async function onDoneWithRoberta(): Promise<void> {
+  isInUse = false;
+}
