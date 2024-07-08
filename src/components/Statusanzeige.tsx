@@ -1,11 +1,15 @@
-'use client';
-
 import { onDoneWithRoberta, onToggleButton } from '@/app/actions';
-import React, { useState } from 'react';
+import React from 'react';
 
-const ServiceStatusToggle = () => {
-  const [isChecked, setIsChecked] = useState(false);
+interface ServiceStatusToggleProps {
+  isChecked: boolean;
+  setIsChecked: (value: boolean) => void;
+}
 
+const ServiceStatusToggle: React.FC<ServiceStatusToggleProps> = ({
+  isChecked,
+  setIsChecked,
+}) => {
   const toggleServices = async () => {
     if (!isChecked) {
       if (await onToggleButton()) {
@@ -35,11 +39,11 @@ const ServiceStatusToggle = () => {
       <div className="toast toast-top toast-end ml-5 mt-20">
         {' '}
         {isChecked ? (
-          <div className="alert alert-info bg-error">
+          <div className="alert alert-success">
             <span>Roberta kann jetzt verwendet werden.</span>
           </div>
         ) : (
-          <div className="alert alert-success">
+          <div className="alert alert-info bg-error">
             <span>Services starten, um Roberta zu nutzen.</span>
           </div>
         )}

@@ -9,7 +9,7 @@ export const useSongHandler = () => {
   const handleSong = async () => {
     try {
       await sing(selectedSong);
-      setDialogMessage('Tanz erfolgreich ausgeführt');
+      setDialogMessage('Song erfolgreich abgespielt');
     } catch (err: any) {
       setDialogMessage('Fehler: ' + err.message);
     }

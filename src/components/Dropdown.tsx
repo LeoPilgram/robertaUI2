@@ -1,7 +1,7 @@
 interface DropdownProps {
   items: { id: number; name: string }[];
   type: string;
-  onSelect: (value: string) => void; // Hinzufügen eines neuen Props für den Ereignishandler
+  onSelect: (value: string) => void;
 }
 
 const DropdownMenu: React.FC<DropdownProps> = ({
@@ -13,7 +13,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({
     <select
       className="select w-full max-w-xs bg-accent"
       defaultValue={type}
-      onChange={(e) => onSelect(e.target.value)} // Verwenden des onSelect Ereignishandlers
+      onChange={(e) => onSelect(e.target.value)}
     >
       <option disabled value={type}>
         {type}

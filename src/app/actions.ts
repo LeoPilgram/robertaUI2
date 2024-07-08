@@ -51,6 +51,23 @@ export async function sing(i: string): Promise<void> {
   });
 }
 
+export async function deliver(i: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    exec(
+      `sshpass -p "123" ssh vinzenz@192.168.1.22 "source /opt/ros/noetic/setup.bash && python3 /home/vinzenz/${i}.py" `,
+      (err, stdout, stderr) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+          return;
+        }
+        console.log(stdout);
+        resolve();
+      }
+    );
+  });
+}
+
 let isInUse: boolean = false;
 
 export async function onToggleButton(): Promise<boolean> {

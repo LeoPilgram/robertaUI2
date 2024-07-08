@@ -1,16 +1,42 @@
+'use client';
+
 import DropdownMenu from '@/components/Dropdown';
 import { CHECKPOINTS, DANCES, SONGS } from '@/constants';
 import ServiceStatusToggle from '@/components/Statusanzeige';
 import { useActionHandler } from '@/app/handleAction';
 import { useDanceHandler } from '@/app/handleDance';
 import { useSongHandler } from '@/app/handleSong';
+import { useDeliveryHandler } from '@/app/handleDelivery';
+import { useState } from 'react';
 
 const Drawer = () => {
+  const [isChecked, setIsChecked] = useState(false);
   const { handleAction } = useActionHandler();
   const { selectedDance, setSelectedDance, handleDance } =
     useDanceHandler();
   const { selectedSong, setSelectedSong, handleSong } =
     useSongHandler();
+  const {
+    selectedCheckpoint,
+    setSelectedCheckpoint,
+    handleDelivery,
+  } = useDeliveryHandler();
+  const handleDanceIfChecked = async () => {
+    if (!isChecked) {
+      window.alert('Bitte aktivieren Sie zuerst die Services!');
+      return;
+    }
+    await handleDance();
+  };
+
+  const handleSongIfChecked = async () => {
+    if (!isChecked) {
+      window.alert('Bitte aktivieren Sie zuerst die Services!');
+      return;
+    }
+    await handleSong();
+  };
+
   return (
     <div className="drawer">
       <input
@@ -41,20 +67,11 @@ const Drawer = () => {
                         </p>
                       </div>
                       <div>
-                        <ServiceStatusToggle />
+                        <ServiceStatusToggle
+                          isChecked={isChecked}
+                          setIsChecked={setIsChecked}
+                        />
                       </div>
-                      <button
-                        className="btn text-left ml-1 mt-4 btn-primary"
-                        onClick={(event) => handleAction('test')}
-                      >
-                        Test
-                      </button>
-                      <button
-                        className="btn text-left ml-1 mt-4 btn-primary"
-                        onClick={(event) => handleAction('dance3')}
-                      >
-                        Dance!
-                      </button>
                     </div>
                   </div>
                 </article>
@@ -91,7 +108,7 @@ const Drawer = () => {
                       <div>
                         <button
                           className="btn text-left ml-1 mt-4 btn-primary"
-                          onClick={handleDance}
+                          onClick={handleDanceIfChecked}
                         >
                           Dance
                         </button>
@@ -108,7 +125,7 @@ const Drawer = () => {
                       <div>
                         <button
                           className="btn text-left ml-1 mt-4 btn-primary"
-                          onClick={handleSong}
+                          onClick={handleSongIfChecked}
                         >
                           Play Song
                         </button>
@@ -143,6 +160,7 @@ const Drawer = () => {
                   <DropdownMenu
                     items={CHECKPOINTS}
                     type="Checkpoints"
+                    onSelect={handleDelivery}
                   />
                 </div>
                 <div>
