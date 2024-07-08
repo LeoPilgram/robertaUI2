@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { dance, deliver, sing } from './actions';
+import { deliver } from './actions';
 
-export const useDeliveryHandler = () => {
+export const useDeliveryHandler = (
+  setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  setDialogMessage: React.Dispatch<React.SetStateAction<string>>
+) => {
   const [selectedCheckpoint, setSelectedCheckpoint] = useState('');
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogMessage, setDialogMessage] = useState('');
 
   const handleDelivery = async () => {
     try {
@@ -19,9 +20,6 @@ export const useDeliveryHandler = () => {
   return {
     selectedCheckpoint,
     setSelectedCheckpoint,
-    dialogOpen,
-    setDialogOpen,
-    dialogMessage,
     handleDelivery,
   };
 };

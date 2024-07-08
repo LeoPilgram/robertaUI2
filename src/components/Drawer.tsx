@@ -7,20 +7,28 @@ import { useActionHandler } from '@/app/handleAction';
 import { useDanceHandler } from '@/app/handleDance';
 import { useSongHandler } from '@/app/handleSong';
 import { useDeliveryHandler } from '@/app/handleDelivery';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const Drawer = () => {
+interface DrawerProps {
+  setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setDialogMessage: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Drawer: React.FC<DrawerProps> = ({
+  setDialogOpen,
+  setDialogMessage,
+}) => {
   const [isChecked, setIsChecked] = useState(false);
   const { handleAction } = useActionHandler();
   const { selectedDance, setSelectedDance, handleDance } =
-    useDanceHandler();
+    useDanceHandler(setDialogOpen, setDialogMessage);
   const { selectedSong, setSelectedSong, handleSong } =
-    useSongHandler();
+    useSongHandler(setDialogOpen, setDialogMessage);
   const {
     selectedCheckpoint,
     setSelectedCheckpoint,
     handleDelivery,
-  } = useDeliveryHandler();
+  } = useDeliveryHandler(setDialogOpen, setDialogMessage);
   const handleDanceIfChecked = async () => {
     if (!isChecked) {
       window.alert('Bitte aktivieren Sie zuerst die Services!');
@@ -160,11 +168,14 @@ const Drawer = () => {
                   <DropdownMenu
                     items={CHECKPOINTS}
                     type="Checkpoints"
-                    onSelect={handleDelivery}
+                    onSelect={setSelectedCheckpoint}
                   />
                 </div>
                 <div>
-                  <button className="btn text-left ml-1 mt-4 btn-primary">
+                  <button
+                    className="btn text-left ml-1 mt-4 btn-primary"
+                    onClick={handleDelivery}
+                  >
                     Go, Roberta!
                   </button>
                 </div>

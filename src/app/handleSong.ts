@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { dance, sing } from './actions';
+import { sing } from './actions';
 
-export const useSongHandler = () => {
+export const useSongHandler = (
+  setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  setDialogMessage: React.Dispatch<React.SetStateAction<string>>
+) => {
   const [selectedSong, setSelectedSong] = useState('');
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogMessage, setDialogMessage] = useState('');
 
   const handleSong = async () => {
     try {
@@ -19,9 +20,6 @@ export const useSongHandler = () => {
   return {
     selectedSong,
     setSelectedSong,
-    dialogOpen,
-    setDialogOpen,
-    dialogMessage,
     handleSong,
   };
 };
