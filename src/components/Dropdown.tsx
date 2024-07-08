@@ -1,13 +1,19 @@
 interface DropdownProps {
   items: { id: number; name: string }[];
   type: string;
+  onSelect: (value: string) => void;
 }
 
-const DropdownMenu: React.FC<DropdownProps> = ({ items, type }) => {
+const DropdownMenu: React.FC<DropdownProps> = ({
+  items,
+  type,
+  onSelect,
+}) => {
   return (
     <select
       className="select w-full max-w-xs bg-accent"
       defaultValue={type}
+      onChange={(e) => onSelect(e.target.value)}
     >
       <option disabled value={type}>
         {type}

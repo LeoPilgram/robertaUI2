@@ -17,10 +17,44 @@ export async function runTest(): Promise<void> {
     );
   });
 }
-export async function dance3(): Promise<void> {
+export async function dance(i: string): Promise<void> {
   return new Promise((resolve, reject) => {
     exec(
-      'sshpass -p turtlebot ssh ubuntu@192.18.50.53 python3 ~/dance_3.py',
+      `sshpass -p "123" ssh vinzenz@192.168.1.22 "source /opt/ros/noetic/setup.bash && python3 /home/vinzenz/${i}.py" `,
+      (err, stdout, stderr) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+          return;
+        }
+        console.log(stdout);
+        resolve();
+      }
+    );
+  });
+}
+
+export async function sing(i: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    exec(
+      `sshpass -p "123" ssh vinzenz@192.168.1.22 "source /opt/ros/noetic/setup.bash && python3 /home/vinzenz/${i}.py" `,
+      (err, stdout, stderr) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+          return;
+        }
+        console.log(stdout);
+        resolve();
+      }
+    );
+  });
+}
+
+export async function deliver(i: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    exec(
+      `sshpass -p "123" ssh vinzenz@192.168.1.22 "source /opt/ros/noetic/setup.bash && python3 /home/vinzenz/${i}.py" `,
       (err, stdout, stderr) => {
         if (err) {
           console.error(err);
@@ -47,4 +81,8 @@ export async function onToggleButton(): Promise<boolean> {
 
 export async function onDoneWithRoberta(): Promise<void> {
   isInUse = false;
+}
+
+export async function isRobertaInUse(): Promise<boolean> {
+  return isInUse;
 }

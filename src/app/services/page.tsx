@@ -2,17 +2,37 @@
 
 import Drawer from '@/components/Drawer';
 import Map from '@/components/Map';
-import { useActionHandler } from '../handleAction';
+import { useDanceHandler } from '../handleDance';
+import { useSongHandler } from '../handleSong';
+import { useDeliveryHandler } from '../handleDelivery';
+import { SetStateAction, useState } from 'react';
 
 export default function ServicesPage() {
-  const { dialogOpen, setDialogOpen, dialogMessage, handleAction } =
-    useActionHandler();
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState('');
+
+  const { handleDance } = useDanceHandler(
+    setDialogOpen,
+    setDialogMessage
+  );
+  const { handleSong } = useSongHandler(
+    setDialogOpen,
+    setDialogMessage
+  );
+  const { handleDelivery } = useDeliveryHandler(
+    setDialogOpen,
+    setDialogMessage
+  );
+
   return (
     <div
       className="flex flex-col"
       style={{ minHeight: 'calc(100vh - 140px)' }}
     >
-      <Drawer />
+      <Drawer
+        setDialogOpen={setDialogOpen}
+        setDialogMessage={setDialogMessage}
+      />
       <div className="flex flex-col grow">
         <Map />
         <div className="flex flex-row justify-around m-5">

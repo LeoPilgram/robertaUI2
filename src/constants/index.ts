@@ -23,4 +23,7 @@ export const CHECKPOINTS = [
   { id: 0, name: 'Checkpoint 1' },
   { id: 1, name: 'Checkpoint 2' },
   { id: 2, name: 'Checkpoint 3' },
+  { id: 0, name: 'Checkpoint 4' },
+  { id: 1, name: 'Checkpoint 5' },
+  { id: 2, name: 'Checkpoint 6' },
 ];
